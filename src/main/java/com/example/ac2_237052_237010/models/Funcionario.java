@@ -1,6 +1,5 @@
 package com.example.ac2_237052_237010.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -13,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +32,6 @@ public class Funcionario {
    private Setor setor;
 
    @ManyToMany(mappedBy = "funcionarios")
-   private List<Projeto> projetos = new ArrayList<>();
+   private List<Projeto> projetos;
+
 }

@@ -1,7 +1,6 @@
 package com.example.ac2_237052_237010.models;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -12,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor 
-
+@Builder
 public class Projeto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,5 +36,5 @@ public class Projeto {
         joinColumns = @JoinColumn(name =  "projeto_id"),
         inverseJoinColumns = @JoinColumn(name = "funcionario_id")
     ) 
-    private List<Funcionario> funcionarios = new ArrayList<>();
+    private List<Funcionario> funcionarios;
 }

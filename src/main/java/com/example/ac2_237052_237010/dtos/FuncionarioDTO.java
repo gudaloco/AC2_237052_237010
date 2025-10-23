@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class FuncionarioDTO {
     private String nome;
-    private Integer idSetor;
+    private Integer id;
 }
